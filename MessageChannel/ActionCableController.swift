@@ -7,8 +7,8 @@
 //
 
 import SwiftUI
+import ActionCableClient
 
-// Structure representing a message
 struct ChatMessage : Hashable {
     var sender: String
     var content: String
@@ -17,12 +17,18 @@ struct ChatMessage : Hashable {
     var showSenderInfo: Bool
 }
 
-// ObservableObject so SwiftUI can access it.
+// ObservableObject so SwiftUI can react when it changes.
 class ActionCableController : ObservableObject {
+    let actionCableClient = ActionCableClient(url: URL(string: "ws://localhost:3000/cable")!)
+    var actionCableChannel: Channel?
+
     // @Published so the ContentView is notified when it changes
     @Published var messages = [ChatMessage]()
     
     init() {
+        setupActionCableConnection()
+        actionCableClient.connect()
+        
         addMessage(sender: "User A", content: "Hello world", remote: true)
         addMessage(sender: "User B", content: "This is my first swiftUI app", remote: false)
         addMessage(sender: "User A", content: "No worries!", remote: true)
@@ -31,7 +37,8 @@ class ActionCableController : ObservableObject {
     }
     
     func sendMessage(_ message: String) {
-        addMessage(sender: "SwiftUI", content: message, remote: false)
+        // addMessage(sender: "SwiftUI", content: message, remote: false)
+        broadcastChatMessage(sender: "SwiftUI", content: message)
     }
     
     private func addMessage(sender: String, content: String, remote: Bool) {
@@ -50,5 +57,63 @@ class ActionCableController : ObservableObject {
         }
         
         messages.append(message)
+    }
+}
+
+// MARK: ActionCableClient
+
+extension ActionCableController {
+    static var ChannelIdentifier = "RoomChannel"
+    
+    func setupActionCableConnection() {
+        actionCableClient.willConnect = {
+            print("Connecting to Rails ActionCable...")
+        }
+
+        actionCableClient.onConnected = {
+            print("Connected to Rails ActionCable: \(self.actionCableClient.url)")
+            self.connectToChannel()
+        }
+
+        actionCableClient.onDisconnected = { (error: ConnectionError?) in
+            print("Disconected from Rails Action Cable. Reason: \(String(describing: error))")
+        }
+
+        actionCableClient.willReconnect = {
+            print("Reconnecting to Rails ActionCable: \(self.actionCableClient.url)")
+            return true
+        }
+    }
+
+    func connectToChannel() {
+        print("Connecting to ActionCable Channel...")
+        actionCableChannel = actionCableClient.create(ActionCableController.ChannelIdentifier, parameters: nil)
+        
+        actionCableChannel?.onSubscribed = {
+            print("Subscribed ActionCable Channel: \(ActionCableController.ChannelIdentifier)")
+        }
+
+        actionCableChannel?.onReceive = { (data: Any?, error: Error?) in
+            if let error = error {
+                print("ERROR: Unable to receive message from ActionCable Channel: \(error.localizedDescription)")
+                return
+            }
+
+            if let data = data as? [String: Any], let message = data["content"] as? String {
+                self.addMessage(sender: "Rails", content: message, remote: true)
+            }
+        }
+    }
+
+    func broadcastChatMessage(sender: String, content: String) {
+        let broadcastAction = "broadcast"
+        
+        let trimmedMessage = content.trimmingCharacters(in: CharacterSet.whitespacesAndNewlines)
+        if !trimmedMessage.isEmpty {
+            print("Sending ActionCable message: \(ActionCableController.ChannelIdentifier)#\(broadcastAction)")
+            
+            let channelMessage = ["sender": sender, "message": trimmedMessage]
+            actionCableChannel?.action(broadcastAction, with: channelMessage)
+        }
     }
 }
