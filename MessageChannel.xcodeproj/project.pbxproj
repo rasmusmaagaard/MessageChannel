@@ -15,6 +15,7 @@
 		EE3E869C237ED5AD00B487F8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EE3E869A237ED5AD00B487F8 /* LaunchScreen.storyboard */; };
 		EE3E86A7237ED5AD00B487F8 /* MessageChannelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE3E86A6237ED5AD00B487F8 /* MessageChannelTests.swift */; };
 		EE3E86B2237ED5AD00B487F8 /* MessageChannelUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE3E86B1237ED5AD00B487F8 /* MessageChannelUITests.swift */; };
+		EE3E86C1237EEBDE00B487F8 /* ActionCableController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE3E86C0237EEBDD00B487F8 /* ActionCableController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +50,8 @@
 		EE3E86AD237ED5AD00B487F8 /* MessageChannelUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MessageChannelUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		EE3E86B1237ED5AD00B487F8 /* MessageChannelUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageChannelUITests.swift; sourceTree = "<group>"; };
 		EE3E86B3237ED5AD00B487F8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		EE3E86BF237ED67A00B487F8 /* MessageChannel.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = MessageChannel.entitlements; sourceTree = "<group>"; };
+		EE3E86C0237EEBDD00B487F8 /* ActionCableController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionCableController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,6 +102,7 @@
 		EE3E868E237ED59F00B487F8 /* MessageChannel */ = {
 			isa = PBXGroup;
 			children = (
+				EE3E86BF237ED67A00B487F8 /* MessageChannel.entitlements */,
 				EE3E868F237ED59F00B487F8 /* AppDelegate.swift */,
 				EE3E8691237ED59F00B487F8 /* SceneDelegate.swift */,
 				EE3E8693237ED59F00B487F8 /* ContentView.swift */,
@@ -106,6 +110,7 @@
 				EE3E869A237ED5AD00B487F8 /* LaunchScreen.storyboard */,
 				EE3E869D237ED5AD00B487F8 /* Info.plist */,
 				EE3E8697237ED5AC00B487F8 /* Preview Content */,
+				EE3E86C0237EEBDD00B487F8 /* ActionCableController.swift */,
 			);
 			path = MessageChannel;
 			sourceTree = "<group>";
@@ -270,6 +275,7 @@
 				EE3E8690237ED59F00B487F8 /* AppDelegate.swift in Sources */,
 				EE3E8692237ED59F00B487F8 /* SceneDelegate.swift in Sources */,
 				EE3E8694237ED59F00B487F8 /* ContentView.swift in Sources */,
+				EE3E86C1237EEBDE00B487F8 /* ActionCableController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -434,7 +440,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = MessageChannel/MessageChannel.entitlements;
 				CODE_SIGN_STYLE = Automatic;
+				DERIVE_MACCATALYST_PRODUCT_BUNDLE_IDENTIFIER = YES;
 				DEVELOPMENT_ASSET_PATHS = "\"MessageChannel/Preview Content\"";
 				DEVELOPMENT_TEAM = YN74RNBH8J;
 				ENABLE_PREVIEWS = YES;
@@ -445,6 +453,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = rasmusmaagaard.dk.MessageChannel;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTS_MACCATALYST = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -454,7 +463,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = MessageChannel/MessageChannel.entitlements;
 				CODE_SIGN_STYLE = Automatic;
+				DERIVE_MACCATALYST_PRODUCT_BUNDLE_IDENTIFIER = YES;
 				DEVELOPMENT_ASSET_PATHS = "\"MessageChannel/Preview Content\"";
 				DEVELOPMENT_TEAM = YN74RNBH8J;
 				ENABLE_PREVIEWS = YES;
@@ -465,6 +476,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = rasmusmaagaard.dk.MessageChannel;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTS_MACCATALYST = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
