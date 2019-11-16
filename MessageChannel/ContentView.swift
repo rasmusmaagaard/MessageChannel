@@ -28,7 +28,8 @@ struct ContentView: View {
                 }.navigationBarTitle("Chat Room")
                 
                 HStack {
-                    TextField("New message...", text: $newMessage).textFieldStyle(RoundedBorderTextFieldStyle())
+                    TextField("New message...", text: $newMessage) { self.sendMessage() }
+                        .textFieldStyle(RoundedBorderTextFieldStyle())
                     Button("Send", action: sendMessage)
                 }.padding()
             }
