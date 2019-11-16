@@ -1,0 +1,28 @@
+PODS:
+  - ActionCableClient (0.2.5):
+    - Starscream (~> 3.1.1)
+  - Starscream (3.1.1)
+
+DEPENDENCIES:
+  - ActionCableClient (from `https://github.com/ahbou/Swift-ActionCableClient`)
+
+SPEC REPOS:
+  trunk:
+    - Starscream
+
+EXTERNAL SOURCES:
+  ActionCableClient:
+    :git: https://github.com/ahbou/Swift-ActionCableClient
+
+CHECKOUT OPTIONS:
+  ActionCableClient:
+    :commit: b12f82d482199f1bca7fdd7f8b0d20076fdf5884
+    :git: https://github.com/ahbou/Swift-ActionCableClient
+
+SPEC CHECKSUMS:
+  ActionCableClient: c6d31cf05a937ded173ee8cd6a7ec0fdb8984af8
+  Starscream: 4bb2f9942274833f7b4d296a55504dcfc7edb7b0
+
+PODFILE CHECKSUM: dcc9ad435f70638cbe8c273306672470b36548be
+
+COCOAPODS: 1.8.4

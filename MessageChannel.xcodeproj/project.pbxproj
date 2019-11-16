@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		045797111D2304B4D3DCBE8B /* Pods_MessageChannel_MessageChannelUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A30E2CF04141A842E4164B1B /* Pods_MessageChannel_MessageChannelUITests.framework */; };
+		22756813748A16115B4E5460 /* Pods_MessageChannel.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5BFA4F80D2386A51251FF7CC /* Pods_MessageChannel.framework */; };
+		E3B36AEFA30A89664502C531 /* Pods_MessageChannelTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 62AE397686CB052B055CF05F /* Pods_MessageChannelTests.framework */; };
 		EE3E8690237ED59F00B487F8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE3E868F237ED59F00B487F8 /* AppDelegate.swift */; };
 		EE3E8692237ED59F00B487F8 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE3E8691237ED59F00B487F8 /* SceneDelegate.swift */; };
 		EE3E8694237ED59F00B487F8 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE3E8693237ED59F00B487F8 /* ContentView.swift */; };
@@ -36,6 +39,14 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		078F654C0CBBF2C196AAB4FF /* Pods-MessageChannel-MessageChannelUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MessageChannel-MessageChannelUITests.release.xcconfig"; path = "Target Support Files/Pods-MessageChannel-MessageChannelUITests/Pods-MessageChannel-MessageChannelUITests.release.xcconfig"; sourceTree = "<group>"; };
+		13D0966F29F014E71EBC9289 /* Pods-MessageChannel-MessageChannelUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MessageChannel-MessageChannelUITests.debug.xcconfig"; path = "Target Support Files/Pods-MessageChannel-MessageChannelUITests/Pods-MessageChannel-MessageChannelUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		495BA89535E1E857DB15C132 /* Pods-MessageChannelTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MessageChannelTests.release.xcconfig"; path = "Target Support Files/Pods-MessageChannelTests/Pods-MessageChannelTests.release.xcconfig"; sourceTree = "<group>"; };
+		4B5876AC32462D3D68792812 /* Pods-MessageChannelTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MessageChannelTests.debug.xcconfig"; path = "Target Support Files/Pods-MessageChannelTests/Pods-MessageChannelTests.debug.xcconfig"; sourceTree = "<group>"; };
+		5BFA4F80D2386A51251FF7CC /* Pods_MessageChannel.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MessageChannel.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		62AE397686CB052B055CF05F /* Pods_MessageChannelTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MessageChannelTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		A30E2CF04141A842E4164B1B /* Pods_MessageChannel_MessageChannelUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MessageChannel_MessageChannelUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		C91A3CB775A32F2BCF459074 /* Pods-MessageChannel.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MessageChannel.debug.xcconfig"; path = "Target Support Files/Pods-MessageChannel/Pods-MessageChannel.debug.xcconfig"; sourceTree = "<group>"; };
 		EE3E868C237ED59F00B487F8 /* MessageChannel.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MessageChannel.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EE3E868F237ED59F00B487F8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		EE3E8691237ED59F00B487F8 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -52,6 +63,7 @@
 		EE3E86B3237ED5AD00B487F8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		EE3E86BF237ED67A00B487F8 /* MessageChannel.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = MessageChannel.entitlements; sourceTree = "<group>"; };
 		EE3E86C0237EEBDD00B487F8 /* ActionCableController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionCableController.swift; sourceTree = "<group>"; };
+		F18BDF1DFCF0714179BB120F /* Pods-MessageChannel.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MessageChannel.release.xcconfig"; path = "Target Support Files/Pods-MessageChannel/Pods-MessageChannel.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,6 +71,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				22756813748A16115B4E5460 /* Pods_MessageChannel.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -66,6 +79,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E3B36AEFA30A89664502C531 /* Pods_MessageChannelTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -73,12 +87,37 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				045797111D2304B4D3DCBE8B /* Pods_MessageChannel_MessageChannelUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		79169C670E20984A98EE345D /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				C91A3CB775A32F2BCF459074 /* Pods-MessageChannel.debug.xcconfig */,
+				F18BDF1DFCF0714179BB120F /* Pods-MessageChannel.release.xcconfig */,
+				13D0966F29F014E71EBC9289 /* Pods-MessageChannel-MessageChannelUITests.debug.xcconfig */,
+				078F654C0CBBF2C196AAB4FF /* Pods-MessageChannel-MessageChannelUITests.release.xcconfig */,
+				4B5876AC32462D3D68792812 /* Pods-MessageChannelTests.debug.xcconfig */,
+				495BA89535E1E857DB15C132 /* Pods-MessageChannelTests.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		8A37EFD98CD662DDEAFA5385 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				5BFA4F80D2386A51251FF7CC /* Pods_MessageChannel.framework */,
+				A30E2CF04141A842E4164B1B /* Pods_MessageChannel_MessageChannelUITests.framework */,
+				62AE397686CB052B055CF05F /* Pods_MessageChannelTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		EE3E8683237ED59F00B487F8 = {
 			isa = PBXGroup;
 			children = (
@@ -86,6 +125,8 @@
 				EE3E86A5237ED5AD00B487F8 /* MessageChannelTests */,
 				EE3E86B0237ED5AD00B487F8 /* MessageChannelUITests */,
 				EE3E868D237ED59F00B487F8 /* Products */,
+				79169C670E20984A98EE345D /* Pods */,
+				8A37EFD98CD662DDEAFA5385 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -148,9 +189,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = EE3E86B6237ED5AD00B487F8 /* Build configuration list for PBXNativeTarget "MessageChannel" */;
 			buildPhases = (
+				0C78B57924F79A7D388236C1 /* [CP] Check Pods Manifest.lock */,
 				EE3E8688237ED59F00B487F8 /* Sources */,
 				EE3E8689237ED59F00B487F8 /* Frameworks */,
 				EE3E868A237ED59F00B487F8 /* Resources */,
+				4D2D51F8F80D71D12BE89DE9 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -165,6 +208,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = EE3E86B9237ED5AD00B487F8 /* Build configuration list for PBXNativeTarget "MessageChannelTests" */;
 			buildPhases = (
+				D82F30A8AD0E488C04033480 /* [CP] Check Pods Manifest.lock */,
 				EE3E869E237ED5AD00B487F8 /* Sources */,
 				EE3E869F237ED5AD00B487F8 /* Frameworks */,
 				EE3E86A0237ED5AD00B487F8 /* Resources */,
@@ -183,9 +227,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = EE3E86BC237ED5AD00B487F8 /* Build configuration list for PBXNativeTarget "MessageChannelUITests" */;
 			buildPhases = (
+				69BA5BA3C48619D39FA98663 /* [CP] Check Pods Manifest.lock */,
 				EE3E86A9237ED5AD00B487F8 /* Sources */,
 				EE3E86AA237ED5AD00B487F8 /* Frameworks */,
 				EE3E86AB237ED5AD00B487F8 /* Resources */,
+				A961988EAA7C7FC447C777AB /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -266,6 +312,109 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		0C78B57924F79A7D388236C1 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-MessageChannel-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		4D2D51F8F80D71D12BE89DE9 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-MessageChannel/Pods-MessageChannel-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-MessageChannel/Pods-MessageChannel-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-MessageChannel/Pods-MessageChannel-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		69BA5BA3C48619D39FA98663 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-MessageChannel-MessageChannelUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A961988EAA7C7FC447C777AB /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-MessageChannel-MessageChannelUITests/Pods-MessageChannel-MessageChannelUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-MessageChannel-MessageChannelUITests/Pods-MessageChannel-MessageChannelUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-MessageChannel-MessageChannelUITests/Pods-MessageChannel-MessageChannelUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D82F30A8AD0E488C04033480 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-MessageChannelTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		EE3E8688237ED59F00B487F8 /* Sources */ = {
@@ -438,6 +587,7 @@
 		};
 		EE3E86B7237ED5AD00B487F8 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = C91A3CB775A32F2BCF459074 /* Pods-MessageChannel.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = MessageChannel/MessageChannel.entitlements;
@@ -461,6 +611,7 @@
 		};
 		EE3E86B8237ED5AD00B487F8 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F18BDF1DFCF0714179BB120F /* Pods-MessageChannel.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = MessageChannel/MessageChannel.entitlements;
@@ -484,6 +635,7 @@
 		};
 		EE3E86BA237ED5AD00B487F8 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4B5876AC32462D3D68792812 /* Pods-MessageChannelTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -506,6 +658,7 @@
 		};
 		EE3E86BB237ED5AD00B487F8 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 495BA89535E1E857DB15C132 /* Pods-MessageChannelTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -528,6 +681,7 @@
 		};
 		EE3E86BD237ED5AD00B487F8 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 13D0966F29F014E71EBC9289 /* Pods-MessageChannel-MessageChannelUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -548,6 +702,7 @@
 		};
 		EE3E86BE237ED5AD00B487F8 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 078F654C0CBBF2C196AAB4FF /* Pods-MessageChannel-MessageChannelUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
