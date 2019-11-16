@@ -37,7 +37,6 @@ class ActionCableController : ObservableObject {
     }
     
     func sendMessage(_ message: String) {
-        // addMessage(sender: "SwiftUI", content: message, remote: false)
         broadcastChatMessage(sender: "SwiftUI", content: message)
     }
     
@@ -99,8 +98,10 @@ extension ActionCableController {
                 return
             }
 
-            if let data = data as? [String: Any], let message = data["content"] as? String {
-                self.addMessage(sender: "Rails", content: message, remote: true)
+            if let message = data as? [String: Any],
+               let sender = message["sender"] as? String,
+               let content = message["content"] as? String {
+                 self.addMessage(sender: sender, content: content, remote: sender != "SwiftUI")
             }
         }
     }
@@ -112,7 +113,7 @@ extension ActionCableController {
         if !trimmedMessage.isEmpty {
             print("Sending ActionCable message: \(ActionCableController.ChannelIdentifier)#\(broadcastAction)")
             
-            let channelMessage = ["sender": sender, "message": trimmedMessage]
+            let channelMessage = ["sender": sender, "content": trimmedMessage]
             actionCableChannel?.action(broadcastAction, with: channelMessage)
         }
     }
