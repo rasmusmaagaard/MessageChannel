@@ -6,6 +6,7 @@ target 'MessageChannel' do
   use_frameworks!
 
   # Pods for MessageChannel
+  pod "ActionCableClient", :git => 'https://github.com/ahbou/Swift-ActionCableClient'
 
   target 'MessageChannelTests' do
     inherit! :search_paths
