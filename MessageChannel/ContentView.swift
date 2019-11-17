@@ -11,6 +11,49 @@ import Combine
 
 struct ContentView: View {
     @EnvironmentObject var actionCableController: ActionCableController
+    
+    var body: some View {
+        Group {
+            if actionCableController.username.isEmpty {
+                SignInView()
+            } else {
+                ChatRoomView()
+            }
+        // Enable "full screen" view for iPad and macOS (default is a splitview)
+        }.navigationViewStyle(StackNavigationViewStyle())
+    }
+}
+
+// MARK: SwiftUI - Sign in view
+
+struct SignInView : View {
+    @EnvironmentObject var actionCableController: ActionCableController
+    @State var name: String = ""
+    
+    var body: some View {
+        VStack {
+            Image("Logo")
+                .resizable()
+                .aspectRatio(contentMode: .fit)
+                .padding()
+            Spacer()
+            Group {
+                TextField("Enter usernamer...", text: $name) {
+                    self.actionCableController.username = self.name
+                }.textFieldStyle(RoundedBorderTextFieldStyle())
+                Button("Start chat") {
+                    self.actionCableController.username = self.name
+                }.disabled(name.count <= 3)
+            }
+            Spacer()
+        }.padding().modifier(AdaptsToSoftwareKeyboard())
+    }
+}
+
+// MARK: SwiftUI - Chat view
+
+struct ChatRoomView : View {
+    @EnvironmentObject var actionCableController: ActionCableController
     @State var newMessage: String = ""
     
     init() {
@@ -27,18 +70,14 @@ struct ContentView: View {
                         MessageView(message: message)
                     }
                 }.navigationBarTitle("Chat Room")
-                
                 HStack {
-                    TextField("New message...", text: $newMessage) { self.sendMessage() }
-                        .textFieldStyle(RoundedBorderTextFieldStyle())
-                        .keyboardType(.twitter)
+                    TextField("New message...", text: $newMessage) {
+                        self.sendMessage()
+                    }.textFieldStyle(RoundedBorderTextFieldStyle()).keyboardType(.twitter)
                     Button("Send", action: sendMessage)
                 }.padding()
             }.modifier(AdaptsToSoftwareKeyboard())
         }
-            
-        // Enable "full screen" view for iPad and macOS (default is a splitview)
-        .navigationViewStyle(StackNavigationViewStyle())
     }
     
     func sendMessage() {
@@ -47,7 +86,8 @@ struct ContentView: View {
     }
 }
 
-// A "cell" structure for the messages
+// MARK: SwiftUI - Message view
+
 struct MessageView : View {
     var message: ChatMessage
     
@@ -73,6 +113,8 @@ struct MessageView : View {
         }
     }
 }
+
+// MARK: SwiftUI - Preview Provider
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {

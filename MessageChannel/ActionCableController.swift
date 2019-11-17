@@ -23,6 +23,7 @@ class ActionCableController : ObservableObject {
     var actionCableChannel: Channel?
 
     // @Published so the ContentView is notified when it changes
+    @Published var username : String = ""
     @Published var messages = [ChatMessage]()
     
     init() {
@@ -37,11 +38,11 @@ class ActionCableController : ObservableObject {
     }
     
     func sendMessage(_ message: String) {
-        broadcastChatMessage(sender: "SwiftUI", content: message)
+        broadcastChatMessage(sender: username, content: message)
     }
     
     private func addMessage(sender: String, content: String, remote: Bool) {
-        //TODO Curently remote status is used for selecting color. It should be user selectable.
+        //TODO: Curently remote status is used for selecting color. It should be user selectable.
         var message = ChatMessage(
                         sender: sender,
                         content: content,
@@ -101,7 +102,7 @@ extension ActionCableController {
             if let message = data as? [String: Any],
                let sender = message["sender"] as? String,
                let content = message["content"] as? String {
-                 self.addMessage(sender: sender, content: content, remote: sender != "SwiftUI")
+                self.addMessage(sender: sender, content: content, remote: sender != self.username)
             }
         }
     }
