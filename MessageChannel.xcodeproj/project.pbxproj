@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -19,6 +19,7 @@
 		EE3E86A7237ED5AD00B487F8 /* MessageChannelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE3E86A6237ED5AD00B487F8 /* MessageChannelTests.swift */; };
 		EE3E86B2237ED5AD00B487F8 /* MessageChannelUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE3E86B1237ED5AD00B487F8 /* MessageChannelUITests.swift */; };
 		EE3E86C1237EEBDE00B487F8 /* ActionCableController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE3E86C0237EEBDD00B487F8 /* ActionCableController.swift */; };
+		EE3F512123816EB800571710 /* AppIconAssets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EE3F512023816EB800571710 /* AppIconAssets.xcassets */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,7 +48,7 @@
 		62AE397686CB052B055CF05F /* Pods_MessageChannelTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MessageChannelTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A30E2CF04141A842E4164B1B /* Pods_MessageChannel_MessageChannelUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MessageChannel_MessageChannelUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C91A3CB775A32F2BCF459074 /* Pods-MessageChannel.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MessageChannel.debug.xcconfig"; path = "Target Support Files/Pods-MessageChannel/Pods-MessageChannel.debug.xcconfig"; sourceTree = "<group>"; };
-		EE3E868C237ED59F00B487F8 /* MessageChannel.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MessageChannel.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		EE3E868C237ED59F00B487F8 /* Message Channel.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Message Channel.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		EE3E868F237ED59F00B487F8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		EE3E8691237ED59F00B487F8 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		EE3E8693237ED59F00B487F8 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -63,6 +64,7 @@
 		EE3E86B3237ED5AD00B487F8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		EE3E86BF237ED67A00B487F8 /* MessageChannel.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = MessageChannel.entitlements; sourceTree = "<group>"; };
 		EE3E86C0237EEBDD00B487F8 /* ActionCableController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionCableController.swift; sourceTree = "<group>"; };
+		EE3F512023816EB800571710 /* AppIconAssets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = AppIconAssets.xcassets; sourceTree = "<group>"; };
 		F18BDF1DFCF0714179BB120F /* Pods-MessageChannel.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MessageChannel.release.xcconfig"; path = "Target Support Files/Pods-MessageChannel/Pods-MessageChannel.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -104,7 +106,6 @@
 				4B5876AC32462D3D68792812 /* Pods-MessageChannelTests.debug.xcconfig */,
 				495BA89535E1E857DB15C132 /* Pods-MessageChannelTests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -133,7 +134,7 @@
 		EE3E868D237ED59F00B487F8 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				EE3E868C237ED59F00B487F8 /* MessageChannel.app */,
+				EE3E868C237ED59F00B487F8 /* Message Channel.app */,
 				EE3E86A2237ED5AD00B487F8 /* MessageChannelTests.xctest */,
 				EE3E86AD237ED5AD00B487F8 /* MessageChannelUITests.xctest */,
 			);
@@ -148,6 +149,7 @@
 				EE3E8691237ED59F00B487F8 /* SceneDelegate.swift */,
 				EE3E8693237ED59F00B487F8 /* ContentView.swift */,
 				EE3E8695237ED5AC00B487F8 /* Assets.xcassets */,
+				EE3F512023816EB800571710 /* AppIconAssets.xcassets */,
 				EE3E869A237ED5AD00B487F8 /* LaunchScreen.storyboard */,
 				EE3E869D237ED5AD00B487F8 /* Info.plist */,
 				EE3E8697237ED5AC00B487F8 /* Preview Content */,
@@ -201,7 +203,7 @@
 			);
 			name = MessageChannel;
 			productName = MessageChannel;
-			productReference = EE3E868C237ED59F00B487F8 /* MessageChannel.app */;
+			productReference = EE3E868C237ED59F00B487F8 /* Message Channel.app */;
 			productType = "com.apple.product-type.application";
 		};
 		EE3E86A1237ED5AD00B487F8 /* MessageChannelTests */ = {
@@ -294,6 +296,7 @@
 				EE3E869C237ED5AD00B487F8 /* LaunchScreen.storyboard in Resources */,
 				EE3E8699237ED5AC00B487F8 /* Preview Assets.xcassets in Resources */,
 				EE3E8696237ED5AC00B487F8 /* Assets.xcassets in Resources */,
+				EE3F512123816EB800571710 /* AppIconAssets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -602,7 +605,7 @@
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = rasmusmaagaard.dk.MessageChannel;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "Message Channel";
 				SUPPORTS_MACCATALYST = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -626,7 +629,7 @@
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = rasmusmaagaard.dk.MessageChannel;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "Message Channel";
 				SUPPORTS_MACCATALYST = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
