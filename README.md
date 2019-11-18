@@ -1,7 +1,7 @@
 # Swift chat client for Action Cable study project
 This is a "chat client" written to learn how to connect a Swift client to Rails server using ActionCable (websocket).
 
-![Screenshot](Documentation/Screenshots/SwiftClient.gif?raw=true "Swift Client")
+[![Screenshot](Documentation/Screenshots/SwiftClient.gif?raw=true)](Documentation/Screenshots/SwiftClient.mp4?raw=true "Swift Client")
 
 ## Overview
 When running the client it will try to connect to a websocket at <ws://localhost:3000/cable>. When successful it will try to subscribe to an Action Cable Channel (RoomChannel).
