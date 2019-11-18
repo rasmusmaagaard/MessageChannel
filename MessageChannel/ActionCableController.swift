@@ -30,11 +30,10 @@ class ActionCableController : ObservableObject {
         setupActionCableConnection()
         actionCableClient.connect()
         
-        addMessage(sender: "User A", content: "Hello world", remote: true)
-        addMessage(sender: "User B", content: "This is my first swiftUI app", remote: false)
-        addMessage(sender: "User A", content: "No worries!", remote: true)
-        addMessage(sender: "User A", content: "Talk to you later 🤠", remote: true)
-        addMessage(sender: "User B", content: "L8 😬", remote: false)
+        addMessage(sender: "Rails", content: "Welcome to the ActionCable study. The server is written in Rails 6 and has a web client (using javascript and handlebar).", remote: true)
+        addMessage(sender: "iOS", content: "The swift client is written in Swift 5.", remote: true)
+        addMessage(sender: "iOS", content: "Oh, by the Way. The UI is written using SwiftUI and a bit of Combine 😎", remote: true)
+        addMessage(sender: "macOS", content: "Catalyst is working like a dream! 🤩", remote: true)
     }
     
     func sendMessage(_ message: String) {
