@@ -9,9 +9,17 @@
 import SwiftUI
 import Combine
 
+// This is the main view. The interface is implemented using only SwiftUI.
+// SwiftUI is a new framework and is missing a lot of functionality we expect coming from UIKit.
+// As a study project this is acceptable. And it has been shown that a lot can be done using only SwiftUI.
+// In larger project it will need to integrate with UIKit - which is supported by SwiftUI.
+// TODO: SwiftUI List can not be scrolled programatically :( We must wrap UIKit or implement a "scroll component" from
+// scratch in SwiftUI. For now the user need to scroll manually to see the latest updates.
 struct ContentView: View {
+    // The Action Cable Controller is injected in SceneDelegate
     @EnvironmentObject var actionCableController: ActionCableController
     
+    // The main view
     var body: some View {
         Group {
             if actionCableController.username.isEmpty {
@@ -19,7 +27,7 @@ struct ContentView: View {
             } else {
                 ChatRoomView()
             }
-        // Enable "full screen" view for iPad and macOS (default is a splitview)
+        // Enable "full screen" view for iPad and macOS (default is a split view)
         }.navigationViewStyle(StackNavigationViewStyle())
     }
 }
@@ -28,6 +36,8 @@ struct ContentView: View {
 
 struct SignInView : View {
     @EnvironmentObject var actionCableController: ActionCableController
+    // @state makes it possible to update values inside a struct and the value is observed by the the SwiftUI. When the
+    // value changes the UI is updated.
     @State var name: String = ""
     
     var body: some View {
@@ -43,6 +53,7 @@ struct SignInView : View {
                 }.textFieldStyle(RoundedBorderTextFieldStyle())
                 Button("Start chat") {
                     self.actionCableController.username = self.name
+                // Username should be at least 4 chars long
                 }.disabled(name.count <= 3)
             }
             Spacer()
@@ -80,6 +91,7 @@ struct ChatRoomView : View {
         }
     }
     
+    // Action for the send button and called when the user tap/press the enter key
     func sendMessage() {
         actionCableController.sendMessage(newMessage)
         newMessage = ""
@@ -126,11 +138,16 @@ struct ContentView_Previews: PreviewProvider {
 
 // MARK: SwiftUI - Soft Keyboard View modifier
 
-// SwiftUI does not (yet) support adjusting views when the soft keyboard is show/hidden.
-// This view modifer add this feature. Inspiration to solution: https://stackoverflow.com/a/58402607
+// SwiftUI does not (yet) support adjusting views when the soft keyboard is show/hidden. This view modifier add this
+// feature.
+// We use Combine (Apple's FRP framework) to setup a stream which merges 3 notification center steams. The streams
+// publish changes to height of the keyboard.
+// We subscribe to this stream and update the currentKeyboard @state when a new keyboard height is published.
+// When the @state value changes SwiftUI update the UI and we get a chance to update the padding on the modified view.
+// Inspiration to solution: https://stackoverflow.com/a/58402607
 struct AdaptsToSoftwareKeyboard: ViewModifier {
     @State var currentKeyboard: SoftKeyboardAnimation = SoftKeyboardAnimation(height: 0)
-    
+
     // It is not (yet) possible to create a SwiftUI Animation from a UIViewAnimationCurve value.
     // Because of this limitation we have to hardcode an animation style to use.
     // Inspiration for animation values: https://stackoverflow.com/a/42904976
@@ -152,7 +169,7 @@ struct AdaptsToSoftwareKeyboard: ViewModifier {
     }
     
     // We are unable to use keyboardAnimationDurationUserInfoKey and keyboardAnimationCurveUserInfoKey.
-    // Because of this we only look for the height of the keyboard.
+    // Because of this we only use the height of the keyboard.
     private let keyboardWillChange = NotificationCenter.default
         .publisher(for: UIResponder.keyboardWillChangeFrameNotification)
         .map { $0.userInfo![UIResponder.keyboardFrameEndUserInfoKey] as! CGRect }
