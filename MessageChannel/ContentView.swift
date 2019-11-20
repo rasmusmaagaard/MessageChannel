@@ -48,7 +48,7 @@ struct SignInView : View {
                 .padding()
             Spacer()
             Group {
-                TextField("Enter usernamer...", text: $name) {
+                TextField("Enter username...", text: $name) {
                     self.actionCableController.username = self.name
                 }.textFieldStyle(RoundedBorderTextFieldStyle())
                 Button("Start chat") {
